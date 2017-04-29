@@ -1,0 +1,26 @@
+{
+  "name": "wishlist",
+  "version": "1.0.0",
+  "description": "Toy app using Express and React",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo no test",
+    "watch": "nodemon app.js",
+    "start": "node app.js"
+  },
+  "author": "Jen Trudell",
+  "license": "MIT",
+  "dependencies": {
+    "express-react-views": "^0.10.2",
+    "jquery": "^3.2.1",
+    "materialize-css": "^0.98.2",
+    "nodemon": "^1.11.0",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "react-materialize": "^0.18.1",
+    "nodemon": "^1.11.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  }
+}
