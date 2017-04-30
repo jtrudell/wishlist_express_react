@@ -15,7 +15,7 @@ class ListItem extends React.Component {
         {
           items.map(function(item) {
             return (
-              <li><CollectionItem href={item.link}>{item.title}</CollectionItem></li>
+              <CollectionItem key={item.id} href={item.link}>{item.title}</CollectionItem>
             )
           })
         }
@@ -28,9 +28,11 @@ class Index extends React.Component {
   render() {
     return (
       <DefaultLayout title={this.props.title}>
-        <h2>Hey there, {this.props.name}</h2>
-        <p>Here is an Amazon wishlist that is not yours:</p>
-        <ListItem items={this.props.data} />
+        <div className="container">
+          <h2>Hey there, {this.props.name}</h2>
+          <p>Here is an Amazon wishlist that is not yours:</p>
+          <ListItem items={this.props.data} />
+        </div>
       </DefaultLayout>
     );
   }
