@@ -1,28 +1,34 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Collection, CollectionItem } from 'react-materialize';
 import DefaultLayout from './layouts/default';
 
 class ListItem extends React.Component {
   render() {
     const items = this.props.items;
+    let id = 0;
 
-    if (!items || items === []) {
-      return null;
+    if (!items || items.length === 0) {
+      return <div>Nothing to see here.</div>
     }
 
     return (
       <Collection>
         {
           items.map(function(item) {
-            return (
-              <CollectionItem key={item.id} href={item.link}>{item.title}</CollectionItem>
-            )
+            // Could use item.id as key, but there are repeats
+            id++;
+            return <CollectionItem key={id} href={item.link}>{item.title}</CollectionItem>
           })
         }
       </Collection>
     );
   }
 }
+
+ListItem.propTypes = {
+  items: PropTypes.array.isRequired,
+};
 
 class Index extends React.Component {
   render() {
@@ -37,5 +43,15 @@ class Index extends React.Component {
     );
   }
 }
+
+Index.defaultProps = {
+  items: [],
+}
+
+Index.propTypes = {
+  title: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  data: PropTypes.array,
+};
 
 module.exports = Index;

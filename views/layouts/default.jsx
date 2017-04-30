@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class DefaultLayout extends React.Component {
   render() {
@@ -19,4 +20,10 @@ class DefaultLayout extends React.Component {
     );
   }
 }
+
+DefaultLayout.propTypes = {
+  title: PropTypes.string.isRequired,
+  children: PropTypes.element.isRequired,
+};
+
 module.exports = DefaultLayout;
