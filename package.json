@@ -2,6 +2,10 @@
   "name": "wishlist",
   "version": "1.0.0",
   "description": "Toy app using Express and React",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jtrudell/wishlist_express_react.git"
+  },
   "main": "app.js",
   "scripts": {
     "test": "echo no test",
