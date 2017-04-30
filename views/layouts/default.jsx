@@ -1,5 +1,4 @@
 import React from 'react';
-import {Button, Icon} from 'react-materialize';
 
 class DefaultLayout extends React.Component {
   render() {
@@ -13,7 +12,6 @@ class DefaultLayout extends React.Component {
         </head>
         <body>
           {this.props.children}
-          <Button className='red' waves='light'><Icon right>file_cloud</Icon></Button>
           <script src="node_modules/jquery/dist/jquery.js"></script>
           <script src="node_modules/materialize-css/bin/materialize.js"></script>
         </body>

@@ -1,7 +1,10 @@
-exports.index = function(req, res){
-  res.render('index', { name: 'Stranger', title: 'WIP' });
-};
+exports.index = function (req, res) {
+  var AmazonWishList = require('amazon-wish-list');
+  var awl = new AmazonWishList.default('com');
+  var listId = 'CP9LH0E2NMUD'
 
-exports.hello = function(req, res) {
-  res.send('Hello World!')
-};
+  awl.getById(listId).then(function(list) {
+    var initialState =  list.items;
+    res.render('index', { name: 'Stranger', title: 'Lazy Amazon Wishlist', data: initialState });
+  })
+}
